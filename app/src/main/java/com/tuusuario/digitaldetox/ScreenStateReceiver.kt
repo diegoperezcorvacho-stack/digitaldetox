@@ -1,8 +1,9 @@
-package com.example.digitaldetox.com.tuusuario.digitaldetox
+package com.tuusuario.digitaldetox
 
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import androidx.core.content.edit
 
 class ScreenStateReceiver : BroadcastReceiver() {
 
@@ -13,7 +14,7 @@ class ScreenStateReceiver : BroadcastReceiver() {
             Intent.ACTION_SCREEN_OFF -> {
                 // Se apagó la pantalla: Guardamos la hora actual de inicio
                 val startTime = System.currentTimeMillis()
-                prefs.edit().putLong("start_time", startTime).apply()
+                prefs.edit { putLong("start_time", startTime) }
             }
 
             Intent.ACTION_USER_PRESENT -> {
@@ -24,10 +25,10 @@ class ScreenStateReceiver : BroadcastReceiver() {
                     val durationMillis = endTime - startTime
 
                     // Guardamos la última duración registrada
-                    prefs.edit()
-                        .putLong("last_session_ms", durationMillis)
-                        .putLong("start_time", 0L) // Reiniciamos la marca de inicio
-                        .apply()
+                    prefs.edit {
+                        putLong("last_session_ms", durationMillis)
+                        putLong("start_time", 0L) // Reiniciamos la marca de inicio
+                    }
                 }
             }
         }

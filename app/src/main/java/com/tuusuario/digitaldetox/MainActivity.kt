@@ -1,7 +1,6 @@
-package com.example.digitaldetox
+package com.tuusuario.digitaldetox
 
 import android.Manifest
-import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
@@ -11,9 +10,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.ui.layout.layout
-import androidx.compose.ui.semantics.text
 import androidx.core.content.ContextCompat
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
     // Registro para solicitar permiso de notificaciones (Android 13+)
     private val requestPermissionLauncher = registerForActivityResult(
-        ActivityResultContracts.RequestPermission()
+        ActivityResultContracts.RequestPermission(),
     ) { isGranted: Boolean ->
         if (isGranted) {
             iniciarServicio()
@@ -35,7 +33,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Asegúrate de que estos IDs existan en tu res/layout/activity_main.xml
         tvDuration = findViewById(R.id.tvDuration)
         btnStartService = findViewById(R.id.btnStartService)
 
@@ -59,13 +56,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun iniciarServicio() {
-        // Asegúrate de que DetoxService.kt esté en el mismo paquete (com.example.digitaldetox)
         val serviceIntent = Intent(this, DetoxService::class.java)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            startForegroundService(serviceIntent)
-        } else {
-            startService(serviceIntent)
-        }
+        startForegroundService(serviceIntent)
         Toast.makeText(this, "Modo Detox Iniciado", Toast.LENGTH_SHORT).show()
     }
 
@@ -75,7 +67,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateUI() {
-        val prefs = getSharedPreferences("DetoxPrefs", Context.MODE_PRIVATE)
+        val prefs = getSharedPreferences("DetoxPrefs", MODE_PRIVATE)
         val durationMs = prefs.getLong("last_session_ms", 0L)
 
         if (durationMs > 0) {
@@ -83,7 +75,7 @@ class MainActivity : AppCompatActivity() {
             val minutes = (durationMs / (1000 * 60)) % 60
             val hours = (durationMs / (1000 * 60 * 60))
 
-            tvDuration.text = String.format("%02d:%02d:%02d", hours, minutes, seconds)
+            tvDuration.text = String.format(Locale.getDefault(), "%02d:%02d:%02d", hours, minutes, seconds)
         } else {
             tvDuration.text = "Sin registros aún"
         }
