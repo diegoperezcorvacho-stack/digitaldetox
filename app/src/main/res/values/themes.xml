@@ -1,9 +1,17 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.DigitalDetox" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/primary_light</item>
+        <item name="colorSecondary">@color/secondary_light</item>
+        <item name="android:windowBackground">@color/background_light</item>
     </style>
 
     <style name="Theme.DigitalDetox" parent="Base.Theme.DigitalDetox" />
+
+    <!-- Dark Theme Overrides -->
+    <style name="Theme.DigitalDetox.Dark" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/primary_dark</item>
+        <item name="colorSecondary">@color/secondary_dark</item>
+        <item name="android:windowBackground">@color/background_dark</item>
+    </style>
 </resources>

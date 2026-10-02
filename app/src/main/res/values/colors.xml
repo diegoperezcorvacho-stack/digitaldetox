@@ -2,4 +2,15 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Material 3 Detox Theme Colors -->
+    <color name="primary_light">#4A6572</color>
+    <color name="secondary_light">#F9AA33</color>
+    <color name="background_light">#F5F5F5</color>
+
+    <color name="primary_dark">#D0E4FF</color>
+    <color name="secondary_dark">#F9AA33</color>
+    <color name="background_dark">#121212</color>
+
+    <color name="success_green">#4CAF50</color>
 </resources>

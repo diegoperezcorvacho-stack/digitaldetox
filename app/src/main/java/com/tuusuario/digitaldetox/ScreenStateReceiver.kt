@@ -27,6 +27,7 @@ class ScreenStateReceiver : BroadcastReceiver() {
                     // Guardamos la última duración registrada
                     prefs.edit {
                         putLong("last_session_ms", durationMillis)
+                        putBoolean("last_session_shown", false)
                         putLong("start_time", 0L) // Reiniciamos la marca de inicio
                     }
                 }

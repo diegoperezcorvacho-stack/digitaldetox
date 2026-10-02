@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">DigitalDetox</string>
+    <string name="btn_start_monitoring">Activar Monitoreo</string>
+    <string name="btn_monitoring">Monitoreando...</string>
+    <string name="welcome_message">¡Excelente descanso!</string>
+    <string name="session_detail">Lograste %s desconectado.</string>
+    <string name="detox_started">Modo Detox Iniciado</string>
+    <string name="notification_permission_needed">Se necesita permiso de notificaciones para el servicio</string>
 </resources>
