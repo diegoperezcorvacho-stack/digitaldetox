@@ -24,7 +24,11 @@ class ScreenStateReceiver : BroadcastReceiver() {
                     val endTime = System.currentTimeMillis()
                     val durationMillis = endTime - startTime
 
-                    // Guardamos la última duración registrada
+                    // Guardamos en la Base de Datos SQLite
+                    val dbHelper = DetoxDatabaseHelper(context)
+                    dbHelper.insertSession(durationMillis, isDemo = false)
+
+                    // Guardamos la última duración registrada en SharedPreferences
                     prefs.edit {
                         putLong("last_session_ms", durationMillis)
                         putBoolean("last_session_shown", false)

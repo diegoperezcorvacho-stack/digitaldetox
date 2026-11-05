@@ -13,4 +13,15 @@
     <color name="background_dark">#121212</color>
 
     <color name="success_green">#4CAF50</color>
+
+    <!-- Demo Mode gradient phase colors -->
+    <color name="demo_phase1_navy">#1E293B</color>
+    <color name="demo_phase2_indigo">#4F46E5</color>
+    <color name="demo_phase3_amber">#F59E0B</color>
+    <color name="demo_phase4_emerald">#10B981</color>
+
+    <color name="badge_demo">#E0E7FF</color>
+    <color name="badge_demo_text">#3730A3</color>
+    <color name="badge_real">#DCFCE7</color>
+    <color name="badge_real_text">#166534</color>
 </resources>

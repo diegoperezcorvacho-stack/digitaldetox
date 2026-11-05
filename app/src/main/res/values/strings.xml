@@ -6,4 +6,21 @@
     <string name="session_detail">Lograste %s desconectado.</string>
     <string name="detox_started">Modo Detox Iniciado</string>
     <string name="notification_permission_needed">Se necesita permiso de notificaciones para el servicio</string>
+
+    <!-- Tabs -->
+    <string name="tab_real">Monitoreo Real</string>
+    <string name="tab_demo">Modo Demo ⚡</string>
+
+    <!-- Modo Demo -->
+    <string name="demo_title">⚡ Modo Demo (Prueba Rápida)</string>
+    <string name="demo_subtitle">Simula un ciclo completo de 8 horas de descanso comprimido en solo 10 segundos reales para demostraciones en vivo.</string>
+    <string name="btn_start_demo">⚡ Iniciar Simulación (10s)</string>
+    <string name="btn_reset_demo">↺ Reiniciar Demo</string>
+    <string name="demo_success_title">¡Ciclo de 8 Horas Completado! 🎉</string>
+    <string name="demo_success_desc">Cálculo automático finalizado y guardado en la Base de Datos SQLite sin tiempos de espera.</string>
+
+    <!-- Base de Datos -->
+    <string name="db_section_title">💾 Registros en Base de Datos (SQLite)</string>
+    <string name="btn_clear_db">Limpiar DB</string>
+    <string name="db_empty">No hay sesiones registradas en la base de datos.</string>
 </resources>
